@@ -2,6 +2,8 @@
 
 \input{../style.tex}
 
+\usepackage{ulem}
+
 %% --------------
 
 \title{Projet}
@@ -26,26 +28,26 @@
 \subsection{}
 
 \begin{frame}[fragile]{Télécharger les sources}
-  \begin{block}{Cloner le dép\^ot suivant}
+  \begin{block}{Forker le dép\^ot suivant sur github}
     \url{https://github.com/lbaudouin/module-project.git}
   \end{block}
-    \begin{block}{Supprimer le dossier git}
-\textcolor{cyan}{\verb?rm -rf .git?} 
-  \end{block}
+  
+\includegraphics[width=\linewidth]{images/fork.png}  
+  
 \end{frame}
 
-\begin{frame}{Exercice}  
+\begin{frame}[fragile]{Exercice}  
     \begin{exampleblock}{Consignes}
 	Par groupe de deux étudiants:
     \begin{enumerate}
-    \item Créer un dépôt et le partager entre vous
-    \item Lier le dossier local au dépôt
-    \item Répartir les tâches
+    \item Répartir les tâches dans l'onglet \verb?Projects?
     \item Générer une bibliothèque statique
-    \item Générer un exécutable et le corriger
+    \item Générer un exécutable
+    \item Signaler le bug dans l'onglet \verb?Issues?
+    \item Le corriger et fermer le ticket
     \item Générer et passer les tests unitaire
     \item Générer la documentation
-    \item Générer l'intégration continue
+    \item \sout{Générer l'intégration continue}
 %   \item Déployer la documentation sur gitlab
     \end{enumerate}
   \end{exampleblock}
