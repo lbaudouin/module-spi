@@ -12,6 +12,9 @@
 }
 \date{03-04 juin 2021}
 
+
+
+
 %% --------------
 
 \begin{document}
@@ -309,43 +312,27 @@
     Documentation automatique / création d'un site web
    \end{exampleblock}
 
+
+
     \begin{block}{Exemple C++ :}
-      \begin{tiny}
-        {\color{red}
-\begin{verbatim}
+    \begin{tiny}
+  \begin{lstlisting}[language=C++]
   /**
   Apply a rotation to a transformation.
   \f[ m \leftarrow m \times \exp \left(\begin{array}{ccc}
       0 & -z & y \\ z & 0 & -x \\ -y & x & 0 \end{array}\right) \f]
   */
-\end{verbatim}
-        }
-\begin{verbatim}
+  
   LIBV_GEOMETRY_EXPORT void apply_rotation
-  ( Matrix3d &m
-\end{verbatim}
-    {\vspace{-31pt} \color{red}
-\begin{verbatim}
-                 ///< A transformation matrix.
-\end{verbatim}
-    }
-    \vspace{-21pt}
-\begin{verbatim}
-  , const Vector3d &d\end{verbatim}
-  {\vspace{-31pt}  \color{red}
-\begin{verbatim}
-                       ///< A rotation in axis-angle representation.
-\end{verbatim}
-  }
-  \vspace{-21pt}
-\begin{verbatim}
-  )
+  ( Matrix3d &m ///< A transformation matrix.  
+  , const Vector3d &d ///< A rotation in axis-angle representation.
+    )
   {
     Matrix3d skrew;
     skrew << 0, -d.z(), d.y(), d.z(), 0, -d.x(), -d.y(), d.x(), 0;
     m *= skrew.exp();
   }
-\end{verbatim}
+\end{lstlisting}
       \end{tiny}
     \end{block}
 
