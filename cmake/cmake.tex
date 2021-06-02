@@ -251,12 +251,12 @@ ADD_EXECUTABLE(hello main.c hello.c)
 \begin{frame}[fragile]{Arborescence}
   \begin{scriptsize}
 \begin{verbatim}
+|-- README.md                < Aide pour l'utilisateur
 |-- bin                        
 |   |-- CMakeLists.txt       < Règles de compilations des binaires
 |   |-- main.cpp             < Source d'un binaire
 |-- CMakeLists.txt           < Règles générales
 |-- doc                      
-|   |-- doc.tag              < Fichier de documentation
 |   |-- Doxyfile.in          < Règle de la documentation
 |   |-- style.css            < Style pour la documentation
 |-- include                  
@@ -264,7 +264,6 @@ ADD_EXECUTABLE(hello main.c hello.c)
 |-- LibraryConfig.cmake.in   < Fichier de configuration pour cmake
 |-- Library.pc.in            < Fichier de configuration pour pkg-config
 |-- LICENSE                  < Licence du projet
-|-- README                   < Aide pour l'utilisateur
 |-- src
 |   |-- my_class.cpp         < Sources du projet        
 |-- unitTesting              < Tests unitaires
@@ -287,7 +286,7 @@ ADD_EXECUTABLE(hello main.c hello.c)
     \begin{enumerate}
       \setcounter{enumi}{4}
     \item \verb?ccmake ..?
-    \item Modifier les options suivantes :\\ \begin{scriptsize}(BUILD\_TEST, CMAKE\_BUILD\_TYPE,  CMAKE\_INSTALL\_PREFIX)\end{scriptsize}
+    \item Modifier les options suivantes :\\ \begin{scriptsize}(BUILD\_TEST,  CMAKE\_INSTALL\_PREFIX)\end{scriptsize}
     \item \verb?make install?
     \item \verb?make test?
     \end{enumerate}
