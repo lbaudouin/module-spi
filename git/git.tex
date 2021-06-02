@@ -10,7 +10,7 @@
 \institute{
   {\url{baudouin.leo @ gmail.com}}
 }
-\date{03-04 juin 2019}
+\date{03-04 juin 2021}
 
 %% --------------
 
@@ -205,8 +205,8 @@
   
   
   \begin{exampleblock}{Créer votre premier dépôt}
-    Associer votre clef SSH publique à votre compte Github.\linebreak
-    Sur Github, créer un projet "module-git".% puis le cloner :\linebreak
+    Associer votre clef SSH publique à votre compte GitLab.\linebreak
+    Sur GitLab, créer un projet "module-git".% puis le cloner :\linebreak
     %\begin{small}
     %\textcolor{commandcolor}{\verb?git clone git@github.com:.../module.git ?}
     %\end{small}
@@ -216,7 +216,7 @@
     \begin{small}
       Ouvrir un nouveau terminal :\linebreak
       \textcolor{commandcolor}{\verb?cd Documents/ ?}\linebreak
-      \textcolor{commandcolor}{\verb?git clone https://github.com/lbaudouin/module-git.git ?}
+      \textcolor{commandcolor}{\verb?git clone git@gitlab.com:<user>/module-git ?}
     \end{small}
   \end{exampleblock}
   
@@ -284,7 +284,7 @@
     \textcolor{commandcolor}{\verb?mkdir <dossier\_du\_projet>?}\linebreak
     \textcolor{commandcolor}{\verb?cd <dossier\_du\_projet> ?}\linebreak
     \textcolor{commandcolor}{\verb?git init?}\linebreak
-    \textcolor{commandcolor}{\verb?git remote add origin git@github.com:<depot>.git?}\linebreak
+    \textcolor{commandcolor}{\verb?git remote add origin git@gitlab.com:<depot>?}\linebreak
     \linebreak
     \textcolor{commandcolor}{\verb?git add <fichiers>?}\linebreak
     \textcolor{commandcolor}{\verb?git commit -m "<Description>"?}\linebreak
@@ -314,7 +314,7 @@
   \begin{exampleblock}{Modifier le dépôt d'un autre étudiant}
     Ajouter un étudiant en tant que collaborateur sur le serveur en utilisant l'interface web.\linebreak
     Etudiant 1:\linebreak
-    \textcolor{commandcolor}{\verb?git clone git@adresse:depot.git?}\linebreak
+    \textcolor{commandcolor}{\verb?git clone git@adresse:depot?}\linebreak
     \linebreak
     \textcolor{commandcolor}{\verb?git add <fichiers>?}\linebreak
     \textcolor{commandcolor}{\verb?git commit -m "Description"?}\linebreak

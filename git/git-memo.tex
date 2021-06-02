@@ -45,19 +45,19 @@ $\triangleright$ clone un dépôt existant
 $\triangleright$ initialise un dépôt local
 
 \noindent\verb?git diff [<file>]?\linebreak
-$\triangleright$ affiche les différence entre l'espace de travail et la zone indexée
+$\triangleright$ affiche les différences entre l'espace de travail et la zone indexée
 
 \noindent\verb?git diff --cached [<file>]?\linebreak
-$\triangleright$ affiche les différence entre la zone indexée et le dépôt local
+$\triangleright$ affiche les différences entre la zone indexée et le dépôt local
 
 \noindent\verb?git diff <commit> [<file>]?\linebreak
-$\triangleright$ affiche les différence entre l'espace de travail et le dernier commit
+$\triangleright$ affiche les différences entre l'espace de travail et le dernier commit
 
 \noindent\verb?git log -p [<file>]?\linebreak
 $\triangleright$ affiche l'historique avec les diff
 
 \noindent\verb?git blame <file>?\linebreak
-$\triangleright$ affiche les dernière modifications et auteurs ligne par ligne
+$\triangleright$ affiche les dernières modifications et auteurs ligne par ligne
 
 \vspace{-3mm}
 \section{Branche}
@@ -107,7 +107,7 @@ $\triangleright$ enlève le fichier de la zone indexée
 \vspace{-2mm}
 
 \noindent\verb?git commit?\linebreak
-$\triangleright$ valide la zone indexée dans le dépôt local
+$\triangleright$ valide la zone indexée
 
 %\noindent\verb?git commit -p?\linebreak
 %$\triangleright$ valide de manière interactive les modifications de l'espace de travail
@@ -116,17 +116,17 @@ $\triangleright$ valide la zone indexée dans le dépôt local
 $\triangleright$ remet l'espace de travail ainsi que la zone indexée das l'état du dépôt et donc efface les modifications non commitées
 
 \noindent\verb?git revert <commit>?\linebreak
-$\triangleright$ applique les modification inverse au commit sélectionné
+$\triangleright$ applique les modifications inverse au commit sélectionné
 
 \noindent\verb?git cherry-pick <commit> ?\linebreak
-$\triangleright$ applique un commit sur une autre branche
+$\triangleright$ applique un commit spécifique depuis une autre branche
 
 \vspace{-3mm}
 \section{Dépôt distant}
 \vspace{-2mm}
 
 \noindent\verb?git remote add <remote> <url>?\linebreak
-$\triangleright$ ajoute un dépôt distant nommé <remote>
+$\triangleright$ ajoute un dépôt distant nommé \textit{remote}
 
 \noindent\verb?git fetch <remote>?\linebreak
 $\triangleright$ synchronise avec un dépôt distant% et ses références locales
