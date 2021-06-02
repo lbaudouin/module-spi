@@ -38,28 +38,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Gestion de projet informatique}
-  \begin{block}{Besoins}
-  \begin{itemize}
-  \item Gestion du code source
-  \item Wiki
-  \item Rapport de bug
-  \item Gantt
-  \item Historique des modifications/versions
-  \item Règles de codage (code style)
-  \end{itemize}
-  \end{block}
-\pause
-	\begin{exampleblock}{Solutions}
-	\begin{itemize}
-	\item Redmine $\Rightarrow$ \url{http://forge.clermont-universite.fr/}
-	\item Jira, Github, GitLab, \dots
-	\item Bitbucket, Trac, Mantis, \dots
-	\end{itemize}
-	\end{exampleblock}  
-  
-\end{frame}
+
 
 \begin{frame}
   \frametitle{Partage de codes-sources}
@@ -70,11 +49,11 @@
       \tikzset{mypoints/.style={fill=white,draw=black,thick}}
       \def\ptsize{1.0pt}
       
-      \tikzset{dev/.style={rectangle,draw,top color=gray, bottom color=blue!30}}
-      \tikzset{unk/.style={rectangle,draw,top color=black, bottom color=red!60,rounded corners=.8ex}}
-      \tikzset{lib/.style={rectangle,draw,top color=black, bottom color=orange!40,rounded corners=.8ex}}
-      \tikzset{proj/.style={rectangle,draw,top color=black, bottom color=green!40,rounded corners=.8ex}}
-      \tikzset{version/.style={rectangle,draw,top color=black, bottom color=black!30,rounded corners=.8ex}}
+      \tikzset{dev/.style={rectangle,draw,color=cyan}}
+      \tikzset{unk/.style={rectangle,draw,color=red,rounded corners=.8ex}}
+      \tikzset{lib/.style={rectangle,draw,color=orange,rounded corners=.8ex}}
+      \tikzset{proj/.style={rectangle,draw,color=green,rounded corners=.8ex}}
+      \tikzset{version/.style={rectangle,draw,color=gray,rounded corners=.8ex}}
       \tikzset{branch/.style={grow=down,xshift=1em,anchor=west,   edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}}}
       \tikzset{first/.style={level distance=5ex}}
       \tikzset{second/.style={level distance=10ex}}
@@ -84,8 +63,8 @@
       \coordinate
       node[dev]{Dev1}
        child[arrow] {node[lib]{lib}
-      child[arrow] { node[unk]{$???$}
         child { node[proj]{Projet1} }
+      child[arrow] { node[unk]{$???$}
         child { node[dev]{Dev2}
   	  child[level distance=13ex] { node[proj]{Projet2} 
             child[grow=south,first,branch] { node[version] {Version 1}}
@@ -111,11 +90,11 @@
       \tikzset{mypoints/.style={fill=white,draw=black,thick}}
       \def\ptsize{1.0pt}
       
-      \tikzset{dev/.style={rectangle,draw,top color=black, bottom color=blue!30}}
-      \tikzset{lib/.style={rectangle,draw,top color=black, bottom color=orange!40,rounded corners=.8ex}}
-      \tikzset{proj/.style={rectangle,draw,top color=black, bottom color=green!40,rounded corners=.8ex}}
-      \tikzset{commit/.style={rectangle,draw,top color=black, bottom color=black!20,rounded corners=.8ex}}
-      \tikzset{final/.style={circle,draw,top color=black, bottom color=orange!30}}
+      \tikzset{dev/.style={rectangle,draw,color=cyan}}
+      \tikzset{lib/.style={rectangle,draw,color=orange,rounded corners=.8ex}}
+      \tikzset{proj/.style={rectangle,draw,color=green,rounded corners=.8ex}}
+      \tikzset{commit/.style={rectangle,draw,color=gray,rounded corners=.8ex}}
+      \tikzset{final/.style={circle,draw,color=orange}}
       
       \node[lib] (lib) {lib};
       \node[proj] (p2) [below of=lib,yshift=-5mm] {Projet2};
@@ -172,7 +151,7 @@
       \node (legendr) [right of=legendl] {};
       \node (legend) [right of=legendr] {Lié avec};
       
-      \draw[double,red,->]  (legendl) -- (legendr);
+      \draw[red,->]  (legendl) -- (legendr);
       
 	  \node (legend_tl) [above of=legendl,left of=legendl,xshift=10mm,yshift=-6mm] {};
 	  \node (legend_tr) [right of=legend_tl,xshift=20mm] {};
@@ -184,6 +163,29 @@
       
     \end{tikzpicture}
   \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gestion de projet informatique}
+  \begin{block}{Besoins}
+  \begin{itemize}
+  \item Gestion du code source
+  \item Wiki
+  \item Rapport de bug
+  \item Gantt
+  \item Historique des modifications/versions
+  \item Règles de codage (code style)
+  \end{itemize}
+  \end{block}
+\pause
+	\begin{exampleblock}{Solutions}
+	\begin{itemize}
+	\item Redmine $\Rightarrow$ \url{http://forge.clermont-universite.fr/}
+	\item Jira, Github, GitLab, \dots
+	\item Bitbucket, Trac, Mantis, \dots
+	\end{itemize}
+	\end{exampleblock}  
+  
 \end{frame}
 
 \section{Outils}
