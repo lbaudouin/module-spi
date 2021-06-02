@@ -59,6 +59,8 @@ docker run -d --name gitlab --restart always gitlab/gitlab-ce:latest
 \section{Intégration Continue}
 \begin{frame}[fragile]{Intégration Continue}
 
+\url{https://gitlab.com/lbaudouin/cv}
+
 \begin{block}{.gitlab-ci.yml}
 \begin{verbatim}
 image: lbaudouin/latex
@@ -77,11 +79,13 @@ Résultat:
 \footnotesize
 \href{https://gitlab.com/lbaudouin/cv/-/jobs/artifacts/master/raw/cv-lbaudouin.pdf?job=build}{https://gitlab.com/\textbf{user}/\textbf{project}/-/jobs/artifacts/master/raw/\textbf{file}?job=\textbf{job}}
 
+
+
 \end{frame}
 
 
 
-\begin{frame}[fragile]{CI}
+\begin{frame}[fragile]{Intégration Continue}
 \begin{block}{Pipeline}
 \begin{center}
 \includegraphics[width=1.0\linewidth]{images/ci-stages}
@@ -92,7 +96,7 @@ Résultat:
 
 
 
-\begin{frame}[fragile]{CI}
+\begin{frame}[fragile]{Intégration Continue}
 
 \begin{block}{.gitlab-ci.yml}
 \scriptsize
@@ -117,7 +121,16 @@ deploy:
 \end{frame}
 
 
+\section{Issues}
+\subsection{}
 
+\begin{frame}[fragile]{Suivi de bugs}
+%\begin{block}{}
+\begin{center}
+\includegraphics[width=1.0\linewidth]{images/gitlab-issues}
+\end{center}
+%\end{block}
+\end{frame}
 
 
 %-------------------------------------------------------------------
