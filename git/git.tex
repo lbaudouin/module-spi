@@ -10,7 +10,7 @@
 \institute{
   {\url{baudouin.leo @ gmail.com}}
 }
-\date{03-04 juin 2021}
+\date{16-17 juin 2021}
 
 %% --------------
 
@@ -95,20 +95,34 @@
     \end{itemize}
   \end{block}
 
-  \begin{block}{Générer une clef SSH}
-    \textcolor{commandcolor}{\verb?ssh-keygen?}\linebreak
+
+\end{frame}
+
+
+\begin{frame}{Clef SSH}
+
+  \begin{exampleblock}{Générer une clef SSH}
+    \textcolor{commandcolor}{\verb?ssh-keygen?}
+    \begin{itemize}
+    \item Utiliser le fichier par default (presser Entrer)
+    \item Entrer un mot de passe à mémoriser (non visible)
+    \item Entrer le une seconde fois
+    \end{itemize}
     \textcolor{commandcolor}{\verb?cat .ssh/id\_rsa.pub ?}
-  \end{block}
+    \begin{itemize}
+    \item Copier l'intégralité du fichier sur le site web
+    \end{itemize}
+  \end{exampleblock}
 
 \end{frame}
 
 
 \begin{frame}{Configuration de Git}
 
-  \begin{block}{Nom et adresse}
+  \begin{exampleblock}{Nom et adresse}
     \textcolor{commandcolor}{\verb?git config --global user.name "John Doe"?}\linebreak
     \textcolor{commandcolor}{\verb?git config --global user.email johndoe@example.com?}
-  \end{block}
+  \end{exampleblock}
 
   \begin{block}{Couleurs}
     \textcolor{commandcolor}{\verb?git config --global color.ui true?}
@@ -205,8 +219,7 @@
   
   
   \begin{exampleblock}{Créer votre premier dépôt}
-    Associer votre clef SSH publique à votre compte GitLab.\linebreak
-    Sur GitLab, créer un projet "module-git".% puis le cloner :\linebreak
+    Sur GitLab, créer un projet vide "module-git".% puis le cloner :\linebreak
     %\begin{small}
     %\textcolor{commandcolor}{\verb?git clone git@github.com:.../module.git ?}
     %\end{small}
@@ -215,8 +228,9 @@
   \begin{exampleblock}{Cloner votre premier dépôt}
     \begin{small}
       Ouvrir un nouveau terminal :\linebreak
-      \textcolor{commandcolor}{\verb?cd Documents/ ?}\linebreak
-      \textcolor{commandcolor}{\verb?git clone git@gitlab.com:<user>/module-git ?}
+      \textcolor{commandcolor}{\verb?cd?}\linebreak
+      \textcolor{commandcolor}{\verb?git clone git@gitlab.com:<user>/module-git ?}\linebreak
+      \textcolor{commandcolor}{\verb?cd module-git?}
     \end{small}
   \end{exampleblock}
   
@@ -279,19 +293,43 @@
 
 
 \begin{frame}[fragile]{Exercice}
-  \begin{exampleblock}{Créer et modifier un dépôt}
-    Créer un dépôt sur un des sites\linebreak
-    \textcolor{commandcolor}{\verb?mkdir <dossier\_du\_projet>?}\linebreak
-    \textcolor{commandcolor}{\verb?cd <dossier\_du\_projet> ?}\linebreak
-    \textcolor{commandcolor}{\verb?git init?}\linebreak
-    \textcolor{commandcolor}{\verb?git remote add origin git@gitlab.com:<depot>?}\linebreak
-    \linebreak
-    \textcolor{commandcolor}{\verb?git add <fichiers>?}\linebreak
+  \begin{exampleblock}{Modifier un dépôt}
+%    Créer un dépôt sur un des sites\linebreak
+    %\textcolor{commandcolor}{\verb?mkdir <dossier\_du\_projet>?}\linebreak
+    %\textcolor{commandcolor}{\verb?cd <dossier\_du\_projet> ?}\linebreak
+    %\textcolor{commandcolor}{\verb?git init?}\linebreak
+    %\textcolor{commandcolor}{\verb?git remote add origin git@gitlab.com:<depot>?}\linebreak
+    %\linebreak
+    \textcolor{commandcolor}{\verb?nano README?}\linebreak
+    \textcolor{commandcolor}{\verb?git add README?}\linebreak
     \textcolor{commandcolor}{\verb?git commit -m "<Description>"?}\linebreak
-    \textcolor{commandcolor}{\verb?git push?}
+    \textcolor{commandcolor}{\verb?git push?}\linebreak
+    Actualiser la page sur GitLab
   \end{exampleblock}
+  
+  \begin{block}{Autres éditeurs}
+    \textcolor{commandcolor}{\verb?gedit README?}\linebreak
+    \textcolor{commandcolor}{\verb?pluma README?}\linebreak
+    \textcolor{commandcolor}{\verb?vi README?}\linebreak
+    \textcolor{commandcolor}{\verb?emacs README?}
+  \end{block}
+  
 \end{frame}
 
+\begin{frame}[fragile]{Exercice}
+  \begin{exampleblock}{Modifier un dépôt}
+%    Créer un dépôt sur un des sites\linebreak
+    %\textcolor{commandcolor}{\verb?mkdir <dossier\_du\_projet>?}\linebreak
+    %\textcolor{commandcolor}{\verb?cd <dossier\_du\_projet> ?}\linebreak
+    %\textcolor{commandcolor}{\verb?git init?}\linebreak
+    %\textcolor{commandcolor}{\verb?git remote add origin git@gitlab.com:<depot>?}\linebreak
+    %\linebreak
+    Editer README via l'éditeur sur GitLab\linebreak
+    \textcolor{commandcolor}{\verb?git pull?}\linebreak
+    \textcolor{commandcolor}{\verb?cat README?}
+  \end{exampleblock}
+    
+\end{frame}
 
 \begin{frame}[fragile]{Voir les modifications}
   \begin{block}{Liste des fichiers locaux modifiés}
@@ -310,17 +348,19 @@
   \end{block}
 \end{frame}
 
-\begin{frame}[fragile]{Exercice}
+\begin{frame}[fragile]{Exercice par deux}
   \begin{exampleblock}{Modifier le dépôt d'un autre étudiant}
-    Ajouter un étudiant en tant que collaborateur sur le serveur en utilisant l'interface web.\linebreak
-    Etudiant 1:\linebreak
-    \textcolor{commandcolor}{\verb?git clone git@adresse:depot?}\linebreak
-    \linebreak
+    Etudiant 1: Ajouter un étudiant en tant que collaborateur\linebreak\linebreak
+    Etudiant 2:\linebreak
+    \textcolor{commandcolor}{\verb?cd?}\linebreak
+    \textcolor{commandcolor}{\verb?rm -rf module-git?}\linebreak
+    \textcolor{commandcolor}{\verb?git clone git@gitlab.com:<etudiant1>/module-git?}\linebreak
+    \textcolor{commandcolor}{\verb?cd module-git ?}\linebreak
     \textcolor{commandcolor}{\verb?git add <fichiers>?}\linebreak
-    \textcolor{commandcolor}{\verb?git commit -m "Description"?}\linebreak
+    \textcolor{commandcolor}{\verb?git commit -m "<Description>"?}\linebreak
     \textcolor{commandcolor}{\verb?git push?}\linebreak
     \linebreak
-    Etudiant 2:\linebreak
+    Etudiant 1:\linebreak
     \textcolor{commandcolor}{\verb?git pull?}\linebreak
     \textcolor{commandcolor}{\verb?git log?}
   \end{exampleblock}
@@ -337,7 +377,11 @@
 \end{verbatim}
   \end{block}
 
-  \begin{block}{Mettre à jour les fichiers}
+  \begin{block}{Résolution graphique}
+    \textcolor{commandcolor}{\verb?git mergetool?}
+  \end{block}
+  
+  \begin{block}{Marquer le conflit comme résolu}
     \textcolor{commandcolor}{\verb?git add <nom\_du\_fichier\_en\_conflit>?}
   \end{block}
 \end{frame}
@@ -422,13 +466,28 @@
 
 \begin{frame}[fragile]{Exercice}
   \begin{exampleblock}{Gestion des branches}
+  Edudiant 1:
     \begin{itemize}
-    \item Travailler sur une nouvelle banche pendant qu'un autre étudiant travaille sur la branche principale.
+    \item Créer une branche
+    \item Se mettre sur la branche
+    \item Pusher des commits
+    \end{itemize}
+  Edudiant 2:
+    \begin{itemize}
+    \item Se mettre sur la branche \textcolor{commandcolor}{\verb?master?}
+    \item Pusher des commits
+    \end{itemize}
+  Edudiant 1:
+    \begin{itemize}
+    \item \textcolor{commandcolor}{\verb?git checkout master; git pull?}
     \item Fusionner la nouvelle branche avec la branche principale
     \item Regarder le résultat avec gitg
     \end{itemize}
-    %\textcolor{commandcolor}{\verb?git push?}
   \end{exampleblock}
+  
+  
+  
+  
 \end{frame}
 
 \begin{frame}[fragile]{Gestion des tags}
