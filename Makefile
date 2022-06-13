@@ -52,5 +52,6 @@ clean:
 clean-pdf:
 	find . -name "*.pdf" -delete
 
+
 .PHONY: intro linux terminal git cmake latex doxygen docker gdb gitlab gnuplot project discussions
 
