@@ -1,0 +1,60 @@
+\documentclass[11pt,twocolumn]{article}
+
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{url}
+
+\begin{document}
+
+\title{My beautiful paper}
+
+\author{Léo}
+
+\maketitle
+
+\section{Introduction}
+
+\lipsum[1-1]
+
+
+\section{Paragraph with image}
+
+\begin{figure}[h] % t,b,h
+\centering
+\includegraphics[width=0.8\linewidth]{toto}
+\caption{This is the best image you can put in a paper}
+\label{fig_toto}
+\end{figure}
+
+The figure~\ref{fig_toto} is a joke but it is well referenced as the formula page~\pageref{formula_sum}.
+
+\section{Main content}
+
+\lipsum[2-4]
+
+\section{Paragraph with citations}
+
+This document is an example of BibTeX using in bibliography management. Three items 
+are cited: \textit{The \LaTeX\ Companion} book \cite{latexcompanion}, the Einstein
+journal paper \cite{einstein}, and the Donald Knuth's website \cite{knuthwebsite}. 
+The \LaTeX\ related items are \cite{latexcompanion,knuthwebsite}. 
+
+
+\section{Paragraph with math}
+
+The formula \ref{formula_sum} is a standard math formula:
+
+
+\begin{equation}
+\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
+\label{formula_sum}
+\end{equation}
+
+
+You can have more information on math notation at \url{https://en.wikibooks.org/wiki/LaTeX/Mathematics}
+
+
+\bibliographystyle{plain}
+\bibliography{article}
+
+\end{document}
