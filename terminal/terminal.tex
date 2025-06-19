@@ -220,49 +220,6 @@ seq 1 150 | timeout 2 parallel -j 150 \
 \end{frame}
 
 
-\section{Système de fichiers}
-\subsection{Système de fichiers}
-
-\begin{frame}{Arborescence de Linux}
-\begin{block}{File System}
-\begin{tabular}{l l}
-\textcolor{red}{/} & $\Leftarrow$ Racine\\
-\textbar- \textcolor{red}{bin} & $\Leftarrow$ Binaires\\
-\textbar- \textcolor{red}{home} & $\Leftarrow$ Utilisateurs\\
-\textbar~\textbar- \textcolor{dgreen}{\$USER} & $\Leftarrow$ Utilisateur (raccourci : $\sim$)\\
-\textbar~\textbar~\textbar- \textcolor{dgreen}{devel} & $\Leftarrow$ Dossier d'installation local (à créer)\\
-\textbar~\textbar~\textbar- \textcolor{dgreen}{devel-src} & $\Leftarrow$ Dossier de sources (à créer)\\
-\textbar- \textcolor{red}{lib} & $\Leftarrow$ Bibliothèques\\
-\textbar- \textcolor{cyan}{usr} & $\Leftarrow$ User System Resource\\
-\textbar~\textbar- \textcolor{cyan}{bin} & $\Leftarrow$ Binaires\\
-\textbar~\textbar- \textcolor{cyan}{lib} & $\Leftarrow$ Bibliothèques\\
-\textbar~\textbar~\textbar- \textcolor{cyan}{pkgconfig} & $\Leftarrow$ Fichiers de package\\
-\textbar~\textbar- \textcolor{cyan}{share} & $\Leftarrow$ Données partagées
-\end{tabular}
-\end{block}
-\end{frame}
-
-\begin{frame}[fragile]{Installation locale}
-
-\begin{block}{Créer les dossiers de travail}
-\textcolor{cyan}{\verb?mkdir -p $\sim$/devel?}\linebreak
-\textcolor{cyan}{\verb?mkdir -p $\sim$/devel-src?}
-\end{block}
-
-\begin{block}{A la fin du $\sim$/.bashrc}
-\begin{scriptsize}
-\begin{verbatim}
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/devel/lib/"
-export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${HOME}/devel/lib/pkgconfig/"
-export CMAKE_PREFIX_PATH="${CMAKE_PREFIX_PATH}:${HOME}/devel/share/"
-export CMAKE_LIBRARY_PATH="${CMAKE_LIBRARY_PATH}:${HOME}/devel/share/"
-export PATH="${PATH}:${HOME}/devel/:${HOME}/devel/bin/"
-export CPATH="${CPATH}:${HOME}/devel/include/"
-\end{verbatim}
-\end{scriptsize}
-\end{block}
-\end{frame}
-
 %-------------------------------------------------------------------
 \end{document} 
 

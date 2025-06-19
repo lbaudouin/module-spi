@@ -1,0 +1,29 @@
+image: gcc
+
+build:
+  stage: build
+  before_script:
+    - apt update && apt -y install cmake make doxygen
+  script:
+    - mkdir -p build
+    - cd build
+    - cmake -DCMAKE_INSTALL_PREFIX=install -DBUILD_TEST=ON ..
+    - make -j install
+  artifacts:
+    paths:
+      - build/install
+  cache:
+    paths:
+      - build/
+
+test1:
+  stage: test
+  script:
+    - cd build
+    - ctest -R test1
+
+test2:
+  stage: test
+  script:
+    - cd build
+    - ctest -R test2

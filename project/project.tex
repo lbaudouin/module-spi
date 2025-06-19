@@ -20,13 +20,12 @@
 
 \begin{frame}
   \titlepage
-
 \end{frame}
 
 %-------
 
 \section{}
-\subsection{}
+\subsection{Projet C++}
 
 \begin{frame}[fragile]{Télécharger les sources}
   \begin{block}{Forker le dép\^ot suivant sur gitlab}
@@ -37,9 +36,9 @@
   
 \end{frame}
 
-\begin{frame}[fragile]{Exercice}  
+\begin{frame}[fragile]{Exercice - C++}  
     \begin{exampleblock}{Consignes}
-	Par groupe de deux étudiants:
+	    Par groupe de deux étudiants ou plus :
     \begin{enumerate}
     %\item Répartir les tâches dans l'onglet \verb?Projects?
     \item Générer une bibliothèque statique avec CMake
@@ -47,12 +46,33 @@
     \item Signaler le bug dans l'onglet \verb?Issues?
     \item Le corriger et fermer le ticket
     \item Générer et passer les tests unitaire avec CMake
-    \item Générer la documentation avec Doxygen
-    \item \sout{Générer l'intégration continue}
+    \item \sout{Générer la documentation avec Doxygen}
+    \item Générer l'intégration continue
+    \item Ajouter l'executable dans un container Docker
 %   \item Déployer la documentation sur gitlab
     \end{enumerate}
   \end{exampleblock}
 \end{frame}
+
+
+\subsection{Projet Python}
+
+\begin{frame}[fragile]{Exercice - Python}
+\begin{exampleblock}{Consignes}
+  \begin{enumerate}
+    \item Écrire un module Python permet de charger un fichier CSV et de le convertir en une image, ainsi que quelques statistiques
+    \item Créer un script Python qui utilise ce module afin de générer un article scientifique en Latex à partir d'un CSV
+    \item Créer un pyproject.toml et utiliser pip-sync pour générer le requirements.txt
+    \item Écrire des tests unitaires pour ce module avec PyTest
+    \item Corriger les éventuels bugs détectés par les tests
+    \item Proposer des améliorations et les ajouter dans le Gitlab pour les attribuer à votre binôme
+    \item Écrire un \texttt{Dockerfile} pour exécuter le script avec Docker
+    \item \sout{Ajouter de la documentation Doxygen}
+  \end{enumerate}
+\end{exampleblock}
+\end{frame}  
+    
+
 
 %-------------------------------------------------------------------
 \end{document} 
