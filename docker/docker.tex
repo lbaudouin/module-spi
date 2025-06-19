@@ -224,6 +224,156 @@ volumes:
 \end{block}
 \end{frame}
 
+\section{Créer une image Docker}
+
+\subsection{Commandes}
+
+\begin{frame}[fragile]{Commandes Docker utiles}
+\begin{block}{Gestion des images}
+\textcolor{cyan}{\verb?docker images?} : Liste les images disponibles \\
+\textcolor{cyan}{\verb?docker pull <image>?} : Télécharge une image \\
+\textcolor{cyan}{\verb?docker rmi <image>?} : Supprime une image
+\end{block}
+
+\begin{block}{Gestion des conteneurs}
+\textcolor{cyan}{\verb?docker ps?} : Liste les conteneurs actifs \\
+\textcolor{cyan}{\verb?docker ps -a?} : Liste tous les conteneurs \\
+\textcolor{cyan}{\verb?docker run <image>?} : Lance un conteneur \\
+\textcolor{cyan}{\verb?docker stop <container>?} : Arrête un conteneur \\
+\textcolor{cyan}{\verb?docker rm <container>?} : Supprime un conteneur
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]{Commandes Docker utiles}
+
+\begin{block}{Autres commandes utiles}
+\textcolor{cyan}{\verb?docker exec -it <container> bash?} : Accès shell dans un conteneur \\
+\textcolor{cyan}{\verb?docker logs <container>?} : Affiche les logs d'un conteneur \\
+\textcolor{cyan}{\verb?docker tag <image>:<tag> <repository>/<image>:<tag>?} : Taguer une image pour un dépôt distant \\
+\textcolor{cyan}{\verb?docker push <repository>/<image>:<tag>?} : Pousser une image vers un registre distant \\
+\end{block}
+
+
+\begin{block}{Build commands}
+\textcolor{cyan}{\verb?docker build -t <image>:<tag> .?} : Construit une image à partir du Dockerfile dans le répertoire courant \\
+\textcolor{cyan}{\verb?docker build -f <Dockerfile> -t <image>:<tag> .?} : Spécifie un Dockerfile différent\\
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Commandes Docker utiles}
+\begin{block}{Exemples d'utilisation de \texttt{docker run}}
+\textcolor{cyan}{\verb?docker run hello-world?} : Teste l'installation de Docker \\
+\textcolor{cyan}{\verb?docker run -it ubuntu:latest bash?} : Lance un shell interactif dans un conteneur Ubuntu \\
+\textcolor{cyan}{\verb?docker run -d -p 8080:80 nginx?} : Démarre Nginx en arrière-plan et mappe le port 80 du conteneur sur le port 8080 de l'hôte \\
+\textcolor{cyan}{\verb?docker run --name monconteneur alpine echo "Bonjour"?} : Donne un nom au conteneur et exécute une commande simple \\
+\textcolor{cyan}{\verb?docker run -v \$(pwd):/data ubuntu ls /data?} : Monte le dossier courant dans le conteneur et liste son contenu \\
+\end{block}
+\end{frame}
+
+
+\subsection{Exercice}
+
+\begin{frame}{Exercice 1 : Créer une image Ubuntu personnalisée}
+\begin{block}{Objectif}
+Créez un \texttt{Dockerfile} qui utilise l'image \texttt{ubuntu:latest} et installe les paquets suivants :
+\begin{itemize}
+  \item \texttt{curl}
+  \item \texttt{git}
+\end{itemize}
+Construisez l'image et lancez un conteneur pour vérifier que les commandes \texttt{curl} et \texttt{git} sont disponibles.
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercice 2 : Image Python avec script}
+\begin{block}{Objectif}
+\begin{itemize}
+  \item Créez un \texttt{Dockerfile} basé sur \texttt{python:3.10-slim}.
+  \item Copiez un script Python local dans l'image dans un dossier /work.
+  \item Configurez le conteneur pour exécuter ce script au démarrage.
+  \item Vérifiez que le script s'exécute correctement en lançant le conteneur.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercice 3 : Serveur Web statique}
+\begin{block}{Objectif}
+\begin{itemize}
+  \item Créez un \texttt{Dockerfile} qui utilise l'image \texttt{nginx:latest}.
+  \item Copiez une page HTML personnalisée dans le répertoire de contenu statique de Nginx (dossier /usr/share/nginx/html).
+  \item Configurez le conteneur pour exposer le port 80.
+  \item Lancez le conteneur en partageant le port 80 et accédez à la page HTML via un navigateur.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercice 4 : Application Flask simple}
+\begin{block}{Objectif}
+\begin{itemize}
+  \item Créez un \texttt{Dockerfile} pour une application web Python utilisant Flask.
+  \item L'application doit afficher "Bonjour Docker" sur le port 5000.
+  \item Utilisez l'image de base \texttt{python:3.10-slim}.
+  \item Lancez le conteneur et accédez à l'application via un navigateur.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercice 5 : Persistance des données avec volumes}
+\begin{block}{Objectif}
+\begin{itemize}
+  \item Créez un volume Docker pour persister les données d'une base de données MySQL.
+  \item Lancez un conteneur \texttt{mysql:8} en utilisant ce volume.
+  \item Vérifiez que les données persistent après l'arrêt et le redémarrage du conteneur.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercice 6 : Dockeriser une application Java}
+\begin{block}{Objectif}
+\begin{itemize}
+  \item Créez un \texttt{Dockerfile} pour une application Java (fichier \texttt{.jar}).
+  \item Utilisez l'image officielle \texttt{openjdk} comme base.
+  \item Configurez le conteneur pour exécuter ce fichier \texttt{.jar} au démarrage.
+  \item Lancez le conteneur et vérifiez que l'application fonctionne correctement.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercice 7 : Variables d'environnement et secrets}
+\begin{block}{Objectif}
+\begin{itemize}
+  \item Créez un \texttt{Dockerfile} pour une application Bash simple qui affiche un message.
+  \item Configurez le script Bash pour lire une variable d'environnement (par exemple, un message personnalisé).
+  \item Lancez le conteneur en passant cette variable d'environnement.
+  \item Vérifiez que le script affiche le message personnalisé.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercice 8 : Limiter les ressources d'un conteneur}
+\begin{block}{Objectif}
+\begin{itemize}
+  \item Créez un conteneur Docker basé sur l'image \texttt{ubuntu:latest}.
+  \item Limitez la mémoire du conteneur à 256Mo et le CPU à 0.5.
+  \item Vérifiez que ces limites sont bien appliquées en utilisant la commande \texttt{docker stats}.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercice 9 : Docker et réseau personnalisé}
+\begin{block}{Objectif}
+\begin{itemize}
+  \item Créez un réseau Docker personnalisé.
+  \item Lancez deux conteneurs (par exemple, un serveur web et une base de données) sur ce réseau.
+  \item Assurez-vous que les conteneurs peuvent communiquer entre eux uniquement via ce réseau.
+  \item Utilisez Docker Compose pour orchestrer ces conteneurs.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
 %-------------------------------------------------------------------
 
 \end{document} 
